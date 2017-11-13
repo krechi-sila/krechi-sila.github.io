@@ -1,10 +1,22 @@
+import React, { Component } from 'react'
+import {
+  getSiteProps,
+  getRouteProps
+} from 'react-static'
 
-import React from 'react'
-//
 
-export default () => (
-  <div>
-    <h1>This is what we're all about.</h1>
-    <p>React, static sites, performance, speed. It's the stuff that makes us tick.</p>
+const About = () => (
+  <div className="about-route page">
+    <h1 className="header">О проекте</h1>
+    <div className="content">
+      <p>Всем привет!</p>
+      <p>То, что вы видите — некоммерческий проект в поддержку нашего любимого авиагородока Кречевицы (для друзей он просто — Кречи).</p>
+      <p>
+        Идея создать сайт о Кречах пришла к нам не случайно. Как-то в процессе создания одной странички потребовалась инфа про родной Городок, но утомительные поиски по всемирной ни к чему не привели. Нам это показалась несправедливым — умалчивать о существовании одного из прекраснейших мест на Земле — Кречевицах. Это был повод. Ну а коли есть повод... грех не выпить, то есть создать сайт. Вот собственно и все вступление.
+      </p>
+      <p>Таможенный контроль и КПП вы уже прошли. Теперь будьте смелее — и вперед по Кречам!!!</p>
+    </div>
   </div>
 )
+
+export default About
