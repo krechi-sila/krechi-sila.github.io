@@ -53,6 +53,40 @@ export default {
         })
       },
       {
+        path: '/photos',
+        component: 'src/routes/Photos',
+        getProps: () => ({
+          title: 'Фотоальбомы',
+          content: [
+            {
+              link: 'https://mikhail.krivyy.com/tag/кречевицы/',
+              title: 'Заметки Михаила Кривых о Кречевицах',
+            },
+            {
+              link: 'https://picasaweb.google.com/111862233650145507273',
+              title: 'Галерея пользователя Александр Харьков',
+              about: 'Очень много фотографий разных эпох военной жизни Кречевиц.'
+            },
+            {
+              link: 'https://fotki.yandex.ru/users/nwb282/album/23269/',
+              title: 'Кречевицы, 20.01.2008',
+            },
+            {
+              link: 'https://fotki.yandex.ru/users/nwb282/album/10559/',
+              title: 'Кречевицы, 22.10.2007 — 7.08.2008',
+            },
+            {
+              link: 'https://fotki.yandex.ru/users/nwb282/album/37043/',
+              title: 'Кречевицы, 2008, снег',
+            },
+            {
+              link: 'https://vk.com/albums-239849',
+              title: 'Кречевицы, фотографии Вконтакте-группы',
+            },
+          ]
+        })
+      },
+      {
         is404: true,
         component: 'src/routes/404'
       }
