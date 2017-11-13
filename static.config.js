@@ -87,8 +87,16 @@ export default {
         })
       },
       {
+        path: '/memories',
+        component: 'src/routes/Memories'
+      },
+      {
+        path: '/timetables/bus',
+        component: 'src/routes/Bus'
+      },
+      {
         is404: true,
-        component: 'src/routes/404'
+        component: 'src/routes/NotFound'
       }
     ]
   }
