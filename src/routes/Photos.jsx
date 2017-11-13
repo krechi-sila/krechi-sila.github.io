@@ -1,13 +1,15 @@
 import React, { Component } from 'react'
-import { getSiteProps } from 'react-static'
-import { getRouteProps } from 'react-static'
+import {
+  getSiteProps,
+  getRouteProps
+} from 'react-static'
 
 class Photos extends Component {
 
   render () {
     const {title, content} = this.props
     return (
-      <div className="home page">
+      <div className="photos-route page">
         <h1 className="header">{title}</h1>
         <div className="content">
           {

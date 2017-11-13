@@ -7,7 +7,7 @@ class Geo extends Component {
   render () {
     const {title, content} = this.props
     return (
-      <div className="home page">
+      <div className="geo-route page">
         <h1 className="header">{title}</h1>
         <div className="content">
           {
