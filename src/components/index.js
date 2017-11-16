@@ -1,3 +1,6 @@
 export Menu from './menu/menu'
 export Footer from './footer/footer'
+export EventItem from './event-item/event-item'
+export EventsList from './events-list/events-list'
+export NamedniYear from './namedni-year/namedni-year'
 export { CounterYandex } from './counter'
