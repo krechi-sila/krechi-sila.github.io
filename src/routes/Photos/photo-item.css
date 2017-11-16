@@ -1,0 +1,11 @@
+.photo-item {
+  margin: 15px 0 30px;
+}
+
+.photo-item__link {
+  font-size: 1.4em;
+}
+
+.photo-item__about {
+  margin: 10px;
+}

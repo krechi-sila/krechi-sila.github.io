@@ -16,11 +16,11 @@ import './app.css'
 export default () => (
   <Router>
     <div className="app">
-      <Menu style={{margin: '20px 0;'}} />
-      <div className="content">
+      <div className="app__menu"><Menu /></div>
+      <div className="app__content">
         <Routes />
       </div>
-      <Footer />
+      <div className="app__footer"><Footer /></div>
       <CounterYandex />
     </div>
   </Router>

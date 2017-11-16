@@ -1,5 +1,5 @@
 body {
-  background: url("/img/bgb.jpg") no-repeat center top #cecccc;
+ /* background: url("/img/bgb.jpg") no-repeat left top #cecccc;*/
   font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
@@ -13,31 +13,24 @@ a:visited {
   color: #3e3e3e
 }
 
-.content {
-  margin: 100px auto 0;
-  width: 550px;
-  min-height: 100vh;
-}
-
-.text__p {
+p {
   margin: 0 0 .8em;
   line-height: 1.4em
 }
 
-.header {
-  font-family: 'Alegreya Sans SC', sans-serif;
-  font-weight: bold;
-  color: rgba(3, 3, 3, 0.1);
+.app__menu {
+  margin: 30px 0;
+}
+
+.app__content {}
+
+.app__footer {}
+
+.page {
+  margin: 100px;
+}
+
+.page__header {
+  font-family: sans-serif;
   font-size: 3em;
-  text-align: center;
-  margin-bottom: 0;
-}
-
-.header_small {
-  margin-top: 0;
-  font-size: 2em;
-}
-
-.photo-item {
-  margin: 0 0 35px 0;
 }

@@ -9,8 +9,8 @@ class Bus extends Component {
   render () {
 
     return (
-      <div className="bus-route page">
-        <h1 className="header">расписание 101</h1>
+      <div className="page page_type_bus">
+        <h1 className="page__header">расписание 101</h1>
       </div>
     )
   }
