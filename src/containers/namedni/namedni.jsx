@@ -16,9 +16,14 @@ class Namedni extends Component {
         text: 'Обновленный дизайн, хостинг без рекламы, новая концепция'
       },
       {
+        date: (new Date('2017')).getTime(),
+        title: 'А тут еще событие одно в 2017 году',
+        text: 'Тест события, обычно пара предложений'
+      },
+      {
         date: (new Date('1914')).getTime(),
         title: 'Гвардейском кавалерийском запас́ном полку проходил службу российский поэт Николай Гумилёв',
-        text: 'Обновленный дизайн, хостинг без рекламы, новая концепция',
+        text: '',
         photos: [
           'akhmatova_1914.png'
         ]
@@ -38,8 +43,8 @@ class Namedni extends Component {
     events.forEach(event => {
       const year = (new Date(event.date)).getFullYear()
 
-      if (years.year) {
-        years.year.events.push(event)
+      if (years[year]) {
+        years[year].events.push(event)
       } else  {
         years[year] = {
           events: [event]
@@ -49,7 +54,7 @@ class Namedni extends Component {
 
     return (
       <div className="namedni">
-        {Object.keys(years).map(yearDataKey => <NamedniYear year={yearDataKey} yearData={years[yearDataKey]} />)}
+        {Object.keys(years).reverse().map(yearDataKey => <NamedniYear year={yearDataKey} yearData={years[yearDataKey]} />)}
       </div>
     )
   }

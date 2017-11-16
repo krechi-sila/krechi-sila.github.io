@@ -44,8 +44,8 @@ class Home extends Component {
           </p>
           <p>Таможенный контроль и КПП вы уже прошли. Теперь будьте смелее — и вперед по Кречам!!!</p>
         </div>
-        <div className="vkVidget">
-          <div id="vk_groups" />
+        <div className="vkVidget" style={{width: '100%'}}>
+          <div id="vk_groups" style={{width: '100%'}} />
         </div>
       </div>
     )

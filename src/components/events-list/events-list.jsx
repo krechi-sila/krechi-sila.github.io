@@ -2,12 +2,12 @@ import React from 'react'
 
 import { EventItem } from '../../components'
 
+import './event-list.css'
+
 const EventsList = (props) => {
   return (
     <ul className="event-list">
-      <li className="event-list__item">
-        {props.events.map(event => <EventItem event={event} />)}
-      </li>
+      {props.events.map(event => <li className="event-list__item"><EventItem event={event} /></li>)}
     </ul>
   )
 }

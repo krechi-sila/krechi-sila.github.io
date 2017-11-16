@@ -22,7 +22,9 @@ p {
   margin: 30px 0;
 }
 
-.app__content {}
+.app__content {
+  min-height: 60vh;
+}
 
 .app__footer {}
 
@@ -33,4 +35,5 @@ p {
 .page__header {
   font-family: sans-serif;
   font-size: 3em;
+  margin-bottom: 3em;
 }

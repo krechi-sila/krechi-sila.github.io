@@ -21,25 +21,25 @@ export default {
   }),
   getRoutes: async () => {
     return [
-        {
-          path: '/',
-          component: 'src/routes/Home'
-        },
-        {
+      {
+        path: '/',
+        component: 'src/routes/Home/Home'
+      },
+      {
         path: '/geo',
-        component: 'src/routes/Geo'
+        component: 'src/routes/Geo/Geo'
       },
       {
         path: '/photos',
-        component: 'src/routes/Photos'
+        component: 'src/routes/Photos/Photos'
       },
       {
         path: '/memories',
-        component: 'src/routes/Memories'
+        component: 'src/routes/Memories/Memories'
       },
       {
         path: '/timetables/bus',
-        component: 'src/routes/Bus'
+        component: 'src/routes/Bus/Bus'
       },
       {
         is404: true,

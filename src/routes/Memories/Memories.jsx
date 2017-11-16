@@ -12,13 +12,8 @@ class Memories extends Component {
 
     return (
       <div className="page page_type_memories">
-        <h1 className="page__header">Наша Эра:</h1>
-        <h3 className="header header_small">события, люди, явления</h3>
-
-        <div className="namedni">
-          <Namedni />
-        </div>
-
+        <h1 className="page__header">История</h1>
+        <Namedni />
       </div>
     )
   }
