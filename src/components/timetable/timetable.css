@@ -1,0 +1,19 @@
+.timetable {
+  display: flex;
+}
+
+.bus-stop {
+  flex-grow: 1;
+}
+
+.bus-stop__name {
+  font-weight: bold;
+}
+
+.bus-stop__times {
+  display: flex;
+}
+
+.bus-stop__time {
+  flex-grow: 1;
+}
