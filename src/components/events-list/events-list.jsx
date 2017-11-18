@@ -7,7 +7,17 @@ import './event-list.css'
 const EventsList = (props) => {
   return (
     <ul className="event-list">
-      {props.events.map(event => <li className="event-list__item"><EventItem event={event} /></li>)}
+      {props.events.map((event, index) => {
+        return (
+          <li
+            key={index}
+            className="event-list__item"
+          >
+            <EventItem event={event}
+            />
+          </li>
+        )
+      })}
     </ul>
   )
 }

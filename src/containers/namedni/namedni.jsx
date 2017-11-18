@@ -59,14 +59,14 @@ class Namedni extends Component {
       }
     ]
 
-    let years = {};
+    let years = {}
 
     events.forEach(event => {
       const year = (new Date(event.date)).getFullYear()
 
       if (years[year]) {
         years[year].events.push(event)
-      } else  {
+      } else {
         years[year] = {
           events: [event]
         }
@@ -75,7 +75,17 @@ class Namedni extends Component {
 
     return (
       <div className="namedni">
-        {Object.keys(years).reverse().map(yearDataKey => <NamedniYear year={yearDataKey} yearData={years[yearDataKey]} />)}
+        {
+          Object.keys(years).reverse().map((yearDataKey, index) => {
+            return (
+              <NamedniYear
+                key={index}
+                year={yearDataKey}
+                yearData={years[yearDataKey]}
+              />
+            )
+          })
+        }
       </div>
     )
   }
