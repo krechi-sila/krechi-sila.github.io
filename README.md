@@ -1,10 +1,4 @@
-# React-Static - Basic Example
+# Сайт Кречевиц
+Построено на основе [react-static](https://github.com/nozzle/react-static).
 
-This example is the most basic version of react-static available. It includes:
-- Babel
-- CSS imports
-- Image imports
-- File imports
-- Automatic Routing
-
-To get started, run `react-static create` and use the `basic` template.
+2003 — 2017, Кречевицы в сети. Пишите: [krechi-sila@yandex.ru](mailto:krechi-sila@yandex.ru)

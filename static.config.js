@@ -2,6 +2,8 @@ import React from 'react'
 import axios from 'axios'
 
 export default {
+  siteRoot: 'https://krechi-sila.github.io',
+
   Document: ({Html, Head, Body, children, siteProps, renderMeta}) => (
     <Html lang="ru">
     <Head>
