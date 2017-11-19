@@ -56,6 +56,7 @@
   flex-grow: 1;
   margin: 0 0 0 15px;
   width: 1.7em;
+  font-size: 1.3em;
 }
 
 .time__minute:before {
