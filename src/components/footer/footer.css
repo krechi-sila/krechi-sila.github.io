@@ -1,0 +1,19 @@
+.footer {
+  text-align: center;
+  margin: 45px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.footer a {
+  color: navy;
+  font-size: .9em;
+}
+
+.footer__item {
+  margin-right: 15px;
+}
+
+.footer__item:last-child {
+  margin-right: 0;
+}
