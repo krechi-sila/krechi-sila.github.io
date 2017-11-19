@@ -16,22 +16,13 @@ const BusStop = ({
 
       <div className="bus-stop__times">
 
-      {/*  <div className="bus-stop__time bus-stop__time_arrival">
-          <h3>Прибытие</h3>
-          {
-            arrival.map((time, index) => {
-              return <div key={index} className="time">{time}</div>
-            })
-          }
-        </div>*/}
-
         <div className="bus-stop__time bus-stop__time_departure">
-          <h3>Отправление</h3>
+          <h3 className="bus-stop__direction">Отправление</h3>
           {
             Object.keys(departure).map((hour, index) => {
               return (
                 <div key={index} className="time">
-                  <div className="time__hour">{hour}</div>
+                  <div className="time__hour">{hour === '24' ? 0 : hour}</div>
                   <div className="time__minutes">
                     {
                       departure[hour].map((minute, index) => {
@@ -79,7 +70,7 @@ Timetable.propTypes = {
       name: PropTypes.string,
       center: PropTypes.array,
       arrival: PropTypes.array,
-      departure: PropTypes.array
+      departure: PropTypes.object
     })
   )
 }

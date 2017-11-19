@@ -34,11 +34,18 @@ p {
 }
 
 .page_type_bus {
-  margin: 0 20px;
+  margin: 0;
 }
 
 .page__header {
   font-family: sans-serif;
   font-size: 3em;
   margin-bottom: 3em;
+}
+
+.page_type_bus .page__header {
+  margin: 100px;
+}
+
+.page_type_bus .page__content {
 }

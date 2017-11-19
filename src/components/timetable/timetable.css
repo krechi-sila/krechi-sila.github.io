@@ -8,6 +8,7 @@
 
 .bus-stop__name {
   font-weight: bold;
+  margin-left: 100px;
 }
 
 .bus-stop__times {
@@ -21,9 +22,13 @@
 .bus-stop__time_departure {
 }
 
+.bus-stop__direction {
+  margin-left: 100px;
+}
+
 .time {
   display: flex;
-  padding: 10px 5px 30px;
+  padding: 10px 5px 30px 70px;
   margin: 0;
 }
 
@@ -39,6 +44,7 @@
   line-height: 0.9em;
   font-weight: bold;
   width: 1.1em;
+  padding: 0 0 0 30px;
 }
 
 .time__minutes {
@@ -49,10 +55,17 @@
 .time__minute {
   flex-grow: 1;
   margin: 0 0 0 10px;
-  width: 2em;
+  width: 1em;
 }
 
 .time__minute:before {
   content: '.';
   color: lightgray;
+}
+
+.time__minute_stub {
+}
+
+.time__minute_stub:before {
+  content: '';
 }
