@@ -1,0 +1,51 @@
+body {
+ /* background: url("/img/bgb.jpg") no-repeat left top #cecccc;*/
+  background-color: rgba(236, 233, 182, 0.45);
+  font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: navy
+}
+
+a:visited {
+  color: #3e3e3e
+}
+
+p {
+  margin: 0 0 .8em;
+  line-height: 1.4em
+}
+
+.app__menu {
+  margin: 30px 0;
+}
+
+.app__content {
+  min-height: 60vh;
+}
+
+.app__footer {}
+
+.page {
+  margin: 100px;
+}
+
+.page_type_bus {
+  margin: 0;
+}
+
+.page__header {
+  font-family: sans-serif;
+  font-size: 3em;
+  margin-bottom: 3em;
+}
+
+.page_type_bus .page__header {
+  margin: 100px;
+}
+
+.page_type_bus .page__content {
+}

@@ -1,0 +1,23 @@
+.event-item {
+}
+
+.event-item__title {
+  font-weight: bold;
+  font-size: 1.4em;
+  margin-bottom: 0.4em;
+}
+
+.event-item__content {
+
+}
+
+.event-item__text {
+
+}
+
+.event-item__photos {
+  margin-top: 20px;
+}
+
+.event-item__photos .event-photo {
+}
