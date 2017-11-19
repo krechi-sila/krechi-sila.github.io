@@ -1,5 +1,6 @@
 body {
  /* background: url("/img/bgb.jpg") no-repeat left top #cecccc;*/
+  background-color: rgba(236, 233, 182, 0.45);
   font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
@@ -30,6 +31,10 @@ p {
 
 .page {
   margin: 100px;
+}
+
+.page_type_bus {
+  margin: 0 20px;
 }
 
 .page__header {

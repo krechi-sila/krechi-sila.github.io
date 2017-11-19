@@ -16,20 +16,33 @@ const BusStop = ({
 
       <div className="bus-stop__times">
 
-        <div className="bus-stop__time bus-stop__time_arrival">
+      {/*  <div className="bus-stop__time bus-stop__time_arrival">
           <h3>Прибытие</h3>
           {
             arrival.map((time, index) => {
               return <div key={index} className="time">{time}</div>
             })
           }
-        </div>
+        </div>*/}
 
         <div className="bus-stop__time bus-stop__time_departure">
           <h3>Отправление</h3>
           {
-            departure.map((time, index) => {
-              return <div key={index} className="time">{time}</div>
+            Object.keys(departure).map((hour, index) => {
+              return (
+                <div key={index} className="time">
+                  <div className="time__hour">{hour}</div>
+                  <div className="time__minutes">
+                    {
+                      departure[hour].map((minute, index) => {
+                        return (
+                          <div key={index} className="time__minute">{minute}</div>
+                        )
+                      })
+                    }
+                  </div>
+                </div>
+              )
             })
           }
         </div>
