@@ -30,6 +30,7 @@
   display: flex;
   padding: 15px 5px 15px 70px;
   margin: 0;
+  font-size: 2em;
 }
 
 .time:nth-child(odd) {
@@ -41,7 +42,7 @@
 
 .time_available {
   opacity: 1;
-  font-size: 2em;
+  font-size: 4em;
 }
 
 .time__hour {
