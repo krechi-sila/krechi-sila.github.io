@@ -28,7 +28,7 @@
 
 .time {
   display: flex;
-  padding: 10px 5px 30px 70px;
+  padding: 15px 5px 15px 70px;
   margin: 0;
 }
 
@@ -37,6 +37,11 @@
 }
 .time:nth-child(even) {
   background-color: rgba(236, 233, 182, 0.85);
+}
+
+.time_available {
+  opacity: 1;
+  font-size: 2em;
 }
 
 .time__hour {
@@ -61,7 +66,7 @@
 
 .time__minute:before {
   content: '.';
-  color: rgba(211, 211, 211, 0.5);
+  color: rgba(0, 0, 0, 1);
 }
 
 .time__minute_stub {
