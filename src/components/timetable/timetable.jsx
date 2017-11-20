@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import './timetable.css'
 
 const BusStop = ({
+  currentHour,
   name,
   center,
   arrival,
@@ -20,11 +21,10 @@ const BusStop = ({
           <h3 className="bus-stop__direction">Отправление</h3>
           {
             Object.keys(departure).map((hour, index) => {
-              const currentHour = (new Date()).getHours()
               const numericHour = parseInt(hour, 10)
               const nextHourCount = 3
               const isTimeCurrentAndNext = numericHour >= currentHour &&
-                                           numericHour < currentHour + nextHourCount
+                numericHour < currentHour + nextHourCount
 
               const displayedHour = hour === '24' ? 0 : hour
 
@@ -62,6 +62,26 @@ const BusStop = ({
 }
 
 class Timetable extends Component {
+  constructor (props) {
+    super(props)
+
+    this.state = {
+      currentHour: (new Date()).getHours()
+    }
+
+    this.getCurrentHourInterval = null
+  }
+
+  componentDidMount () {
+    this.getCurrentHourInterval = setInterval(
+      () => this.setState({ currentHour: (new Date()).getHours()  }), 1000
+    )
+  }
+
+  componentWillUnmount () {
+    clearInterval(this.getCurrentHourInterval)
+  }
+
   render () {
     const data = this.props.data
 
@@ -70,6 +90,7 @@ class Timetable extends Component {
         {
           data.map((stop, index) => (
             <BusStop
+              currentHour={this.state.currentHour}
               key={index}
               name={stop.name}
               center={stop.center}
