@@ -20,10 +20,20 @@ const BusStop = ({
           <h3 className="bus-stop__direction">Отправление</h3>
           {
             Object.keys(departure).map((hour, index) => {
+              const currentHour = (new Date()).getHours()
+              const numericHour = parseInt(hour, 10)
+              const nextHourCount = 3
+              const isTimeCurrentAndNext = numericHour >= currentHour &&
+                                           numericHour < currentHour + nextHourCount
+
               const displayedHour = hour === '24' ? 0 : hour
 
               return (
-                <div key={index} className="time">
+                <div
+                  key={index}
+                  className={
+                    `time ${ isTimeCurrentAndNext ? 'time_available' : '' }`
+                  }>
                   <div className="time__hour">{displayedHour}</div>
                   <div className="time__minutes">
                     {
