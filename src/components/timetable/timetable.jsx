@@ -20,14 +20,23 @@ const BusStop = ({
           <h3 className="bus-stop__direction">Отправление</h3>
           {
             Object.keys(departure).map((hour, index) => {
+              const displayedHour = hour === '24' ? 0 : hour
+
               return (
                 <div key={index} className="time">
-                  <div className="time__hour">{hour === '24' ? 0 : hour}</div>
+                  <div className="time__hour">{displayedHour}</div>
                   <div className="time__minutes">
                     {
                       departure[hour].map((minute, index) => {
+                        const displayedMinute = minute > 9 ? minute : `0${minute}`
+
                         return (
-                          <div key={index} className="time__minute">{minute}</div>
+                          <div
+                            key={index}
+                            className="time__minute"
+                          >
+                            {displayedMinute}
+                          </div>
                         )
                       })
                     }
