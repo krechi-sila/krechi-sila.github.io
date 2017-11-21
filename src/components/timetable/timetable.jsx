@@ -4,16 +4,16 @@ import PropTypes from 'prop-types'
 import './timetable.css'
 
 const BusStop = ({
-  currentHour,
-  name,
-  center,
-  arrival,
-  departure
-}) => {
+                   currentHour,
+                   name,
+                   title,
+                   center,
+                   departure
+                 }) => {
 
   return (
     <div className="bus-stop">
-      <h2 className="bus-stop__name">{name}</h2>
+      <h2 className="bus-stop__name" title={name}>{title}</h2>
 
       <div className="bus-stop__times">
 
@@ -66,16 +66,11 @@ class Timetable extends Component {
     super(props)
 
     this.state = {
-      currentHour: (new Date()).getHours()
+      currentHour: null,
+      selectedStop: 0
     }
 
     this.getCurrentHourInterval = null
-  }
-
-  componentDidMount () {
-    this.getCurrentHourInterval = setInterval(
-      () => this.setState({ currentHour: (new Date()).getHours()  }), 1000
-    )
   }
 
   componentWillUnmount () {
@@ -85,34 +80,66 @@ class Timetable extends Component {
   render () {
     const data = this.props.data
 
+    console.log(data) // eslint-disable-line
+
     return (
       <div className="timetable">
-        {
-          data.map((stop, index) => (
-            <BusStop
-              currentHour={this.state.currentHour}
-              key={index}
-              name={stop.name}
-              center={stop.center}
-              arrival={stop.arrival}
-              departure={stop.departure}
-            />)
-          )
-        }
+
+        <div className="timetable__info">
+          <h3>{data.stops[0].title} — {data.stops[data.stops.length - 1].title}</h3>
+
+          <select style={{fontSize: '1.3em'}} onChange={this.onSelect}>
+            {
+              data.stops.map((stop, index) => {
+
+                return (
+                  <option
+                    key={index}
+                    value={index}
+                    disabled={index > 0}
+                  >
+                    {stop.title}
+                  </option>
+                )
+              })
+            }
+          </select>
+        </div>
+        <div className="timetable__stops">
+          {
+            data.stops.map((stop, index) => (
+              stop.departure && <BusStop
+                currentHour={this.state.currentHour}
+                key={index}
+                name={stop.name}
+                title={stop.title}
+                center={stop.center}
+                departure={stop.departure}
+              />)
+            )
+          }
+        </div>
       </div>
     )
+  }
+
+  onSelect (e) {
+    console.log(e.target.value) // eslint-disable-line
   }
 }
 
 Timetable.propTypes = {
-  data: PropTypes.arrayOf(
-    PropTypes.shape({
-      name: PropTypes.string,
-      center: PropTypes.array,
-      arrival: PropTypes.array,
-      departure: PropTypes.object
-    })
-  )
+  selectedStop: PropTypes.number,
+  data: PropTypes.shape({
+    stops: PropTypes.arrayOf(
+      PropTypes.shape({
+        name: PropTypes.string,
+        title: PropTypes.string,
+        center: PropTypes.array,
+        departure: PropTypes.object
+      })
+    )
+  })
 }
 
 export default Timetable

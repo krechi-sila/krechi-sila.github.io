@@ -6,6 +6,10 @@
   margin: 0 0 0 100px;
 }
 
-.schedule__timetable {
+.schedule__timetables {
+  display: flex;
+}
 
+.schedule__timetable {
+  flex-grow: 1;
 }

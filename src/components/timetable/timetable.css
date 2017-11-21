@@ -1,5 +1,4 @@
 .timetable {
-  display: flex;
 }
 
 .bus-stop {
@@ -8,6 +7,7 @@
 
 .bus-stop__name {
   font-weight: bold;
+  display: none;
   margin-left: 100px;
 }
 
@@ -30,7 +30,8 @@
   display: flex;
   padding: 15px 5px 15px 70px;
   margin: 0;
-  font-size: 2em;
+  font-size: 1.2em;
+  opacity: 1;
 }
 
 .time:nth-child(odd) {
@@ -42,7 +43,6 @@
 
 .time_available {
   opacity: 1;
-  font-size: 4em;
 }
 
 .time__hour {
