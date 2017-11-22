@@ -1,6 +1,10 @@
 .timetable {
 }
 
+.timetable__title {
+  text-align: center;
+}
+
 .bus-stop {
   flex-grow: 1;
 }
@@ -32,6 +36,12 @@
   margin: 0;
   font-size: 1.2em;
   opacity: 1;
+}
+
+@media (max-width: 500px) {
+  .time {
+    padding: 5px 5px 5px 5px;
+  }
 }
 
 .time:nth-child(odd) {

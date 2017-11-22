@@ -49,3 +49,11 @@ p {
 
 .page_type_bus .page__content {
 }
+
+@media (max-width: 500px) {
+  .page_type_bus .page__header {
+    margin: 0;
+    font-size: 2em;
+    text-align: center;
+  }
+}

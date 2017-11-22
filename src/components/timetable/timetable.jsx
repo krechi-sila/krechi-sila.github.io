@@ -80,15 +80,13 @@ class Timetable extends Component {
   render () {
     const data = this.props.data
 
-    console.log(data) // eslint-disable-line
-
     return (
       <div className="timetable">
 
         <div className="timetable__info">
-          <h3>{data.stops[0].title} — {data.stops[data.stops.length - 1].title}</h3>
+          <h3 className="timetable__title">{data.stops[0].title} — {data.stops[data.stops.length - 1].title}</h3>
 
-          <select style={{fontSize: '1.3em'}} onChange={this.onSelect}>
+  {/*        <select style={{fontSize: '1.3em'}} onChange={this.onSelect}>
             {
               data.stops.map((stop, index) => {
 
@@ -103,7 +101,7 @@ class Timetable extends Component {
                 )
               })
             }
-          </select>
+          </select>*/}
         </div>
         <div className="timetable__stops">
           {
