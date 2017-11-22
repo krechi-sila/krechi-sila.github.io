@@ -22,3 +22,10 @@
 
 .event-item__photos .event-photo {
 }
+
+@media (max-width: 500px) {
+  .event-photo {
+    max-width: 320px;
+  }
+
+}
