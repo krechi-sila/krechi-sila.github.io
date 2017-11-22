@@ -8,35 +8,28 @@ import {
 
 import data from './timetables/101'
 
-
-
 class Bus extends Component {
-
   render () {
+
+    const forward = data.forward
+    const backward = data.backward
 
     return (
       <div className="page page_type_bus">
-        <h1 className="page__header">расписание 101</h1>
+        <h1 className="page__header">расписание</h1>
         <div className="page__content">
 
           <div className="schedule">
 
-            <div className="schedule__header">
-              <p>Маршрут:</p>
-              <ul>
-                <li>Кречевицы (Армейская ул.д.139)</li>
-                <li>Трубичино</li>
-                <li>Б.С.Петербургская ул (Щусева)</li>
-                <li>ул. Газон</li>
-                <li>ул. Людогоща</li>
-                <li>Воскресенский бульвар</li>
-                <li>Вокзал</li>
-              </ul>
-              <p>Время в пути: утром 35-40 минут, днем 45-50 минут</p>
-            </div>
+            {/*<div className="schedule__header">101</div>*/}
 
-            <div className="schedule__timetable">
-              <Timetable data={data} />
+            <div className="schedule__timetables">
+              <div className="schedule__timetable">
+                <Timetable data={forward}/>
+              </div>
+              <div className="schedule__timetable">
+                <Timetable data={backward}/>
+              </div>
             </div>
           </div>
 

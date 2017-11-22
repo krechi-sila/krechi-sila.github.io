@@ -7,6 +7,7 @@ export default {
   Document: ({Html, Head, Body, children, siteProps, renderMeta}) => (
     <Html lang="ru">
     <Head>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="yandex-verification" content="4c16862f72d07481" />
       <meta httpEquiv="X-UA-Compatible" content="IE=EmulateIE7, IE=edge" />
       <meta httpEquiv="Content-Type" content="text/html;charset=UTF-8" />
