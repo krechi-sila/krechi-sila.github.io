@@ -1,5 +1,5 @@
 body {
- /* background: url("/img/bgb.jpg") no-repeat left top #cecccc;*/
+  /* background: url("/img/bgb.jpg") no-repeat left top #cecccc;*/
   background-color: rgba(236, 233, 182, 0.45);
   font-family: Arial, Verdana, Geneva, Helvetica, sans-serif;
   margin: 0;
@@ -27,7 +27,8 @@ p {
   min-height: 60vh;
 }
 
-.app__footer {}
+.app__footer {
+}
 
 .page {
   margin: 100px;
@@ -51,6 +52,19 @@ p {
 }
 
 @media (max-width: 500px) {
+  .page {
+    margin: 0 10px;
+  }
+
+  .page__header {
+    margin-bottom: 1em;
+    font-size: 2em;
+  }
+
+  .page_type_bus {
+    margin: 0;
+  }
+
   .page_type_bus .page__header {
     margin: 0;
     font-size: 2em;
