@@ -16,8 +16,8 @@ class Photos extends Component {
                 title: 'Заметки Михаила Кривых о Кречевицах',
               },
               {
-                link: 'https://picasaweb.google.com/111862233650145507273',
-                title: 'Галерея пользователя Александр Харьков',
+                link: 'https://110vtap.ucoz.ru/index/istorija_v_fotografijakh/0-14',
+                title: '110 ВОЕННО-ТРАНСПОРТНЫЙ АВИАЦИОННЫЙ ПОЛК',
                 about: 'Очень много фотографий разных эпох военной жизни Кречевиц.'
               },
               {
