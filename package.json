@@ -1,26 +1,22 @@
 {
   "name": "krechi-sila-site",
   "private": true,
-  "version": "5.0.0",
+  "version": "6.0.0",
+  "version-year": "2021",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "react-static start",
-    "build": "react-static build",
-    "serve": "serve dist -p 3000",
-    "deploy": "node deploy.js"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
   "dependencies": {
-    "axios": "^0.21.1",
-    "prop-types": "^15.6.0",
-    "react": "^16.1.1",
-    "react-dom": "^16.1.2",
-    "react-router": "^4.2.0",
-    "react-static": "^4.3.0"
-  },
-  "devDependencies": {
-    "eslint-config-react-tools": "1.x.x",
-    "gh-pages": "^1.1.0",
-    "serve": "^10.1.2"
+    "date-fns": "^2.16.1",
+    "gray-matter": "^4.0.2",
+    "next": "^10.0.5",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "remark": "^13.0.0",
+    "remark-html": "^13.0.1"
   }
 }

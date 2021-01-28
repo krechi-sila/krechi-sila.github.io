@@ -1,4 +1,32 @@
-# Сайт Кречевиц [![Build Status](https://travis-ci.org/krechi-sila/krechi-sila.github.io.svg?branch=feature%2Ftravis)](https://travis-ci.org/krechi-sila/krechi-sila.github.io)
-Построено на основе [react-static](https://github.com/nozzle/react-static).
+# Сайт Кречевиц
+Всем привет!
+Это — некоммерческий проект в поддержку нашего любимого авиагородока Кречевицы (для друзей он просто — Кречи).
+Идея создать сайт о Кречах пришла к нам не случайно.
+Как-то в процессе создания одной странички потребовалась инфа про родной Городок, н о утомительные поиски по всемирной ни к чему не привели. Нам это показалась несправедливым — умалчивать о существовании одного из прекраснейших мест на Земле — Кречевицах. Это был повод.
+Ну а коли есть повод... грех не выпить, то есть создать сайт.
 
-2003 — 2021, Кречевицы в сети. Пишите: [krechi-sila@yandex.ru](mailto:krechi-sila@yandex.ru)
+Вот собственно и все вступление.
+Таможенный контроль и КПП вы уже прошли.
+Теперь будьте смелее — и вперед по Кречам!!!
+
+
+## История версий
+- [9 ноября 2017](https://web.archive.org/web/20171109080811/https://krechi-sila.github.io/)
+- [11 февраля 2017](https://web.archive.org/web/20170211025138/http://krechi-sila.narod.ru:80/)
+- [30 июля 2014](https://web.archive.org/web/20140730172433/http://krechi-sila.narod.ru:80/)
+- [27 ноября 2012](https://web.archive.org/web/20121127234516/http://www.krechi-sila.narod.ru:80/)
+- [24 февраля 2009](https://web.archive.org/web/20090224194006/http://krechi-sila.narod.ru:80/)
+- [15 мая 2007](https://web.archive.org/web/20070515143131/http://krechi-sila.narod.ru/)
+- [28 мая 2004](https://web.archive.org/web/20040528031859/http://krechi-sila.narod.ru/)
+
+## Технические подробности
+Построено на основе [nextjs](https://nextjs.org/).
+Хостинг: https://pages.github.com/
+CI/CD: https://github.com/features/actions
+
+
+## Копирайт
+2003 — 2021, <br /> Кречевицы в сети.
+<br />
+<br />
+Пишите: [krechi-sila@yandex.ru](mailto:krechi-sila@yandex.ru)

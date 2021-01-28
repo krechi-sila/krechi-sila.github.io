@@ -1,1 +1,0 @@
-export Geo from './Geo'
