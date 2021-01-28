@@ -15,6 +15,6 @@ deploy:
   local_dir: dist
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
-  target_branch: master
+  target_branch: main
   on:
     branch: dev
