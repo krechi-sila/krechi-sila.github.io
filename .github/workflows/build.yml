@@ -17,7 +17,7 @@ jobs:
         run: npm build
         
       - name: Static HTML Export
-        run: npm export
+        run: npm run export
 
       - name: Delpoy 🚀
         uses: JamesIves/github-pages-deploy-action@3.7.1
