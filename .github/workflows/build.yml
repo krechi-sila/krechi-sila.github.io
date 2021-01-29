@@ -1,10 +1,27 @@
-name: build
+name: deploy
 on: [push]
 jobs:
-  check-bats-version:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-      - run: npm install
-      - run: npm build
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Node Setup
+        uses: actions/setup-node@v1
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build
+        run: npm build
+        
+      - name: Static HTML Export
+        run: npm export
+
+      - name: Delpoy 🚀
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: out
