@@ -5,6 +5,9 @@ import path from 'path'
 import remark from 'remark'
 import html from 'remark-html'
 import unwrapImages from 'remark-unwrap-images'
+import ImageGallery from 'react-image-gallery'
+import 'react-image-gallery/styles/css/image-gallery.css'
+
 import { PostLayout } from '../../layouts'
 
 export async function getStaticProps () {
@@ -18,9 +21,19 @@ export async function getStaticProps () {
     .process(matterResult.content)
   const contentHtml = processedContent.toString()
 
+  const imagesDirPath = path.join(process.cwd(), 'public', 'images', 'album-1')
+  const images = fs.readdirSync(imagesDirPath)
+    .map((fileName => {
+      return {
+        original: `../images/album-1/${fileName}`,
+        thumbnail: `../images/album-1/${fileName}`,
+      }
+    }))
+
   return {
     props: {
       pageData: {
+        images,
         contentHtml,
         ...matterResult.data,
       },
@@ -38,6 +51,7 @@ export default function PhotosPage ({ pageData }) {
         <h1 className="page__header">{pageData.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: pageData.contentHtml }} />
       </article>
+      <ImageGallery items={pageData.images} />
     </PostLayout>
   )
 }
