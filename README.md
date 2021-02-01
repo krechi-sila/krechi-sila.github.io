@@ -10,9 +10,9 @@
 - [28 мая 2004](https://web.archive.org/web/20040528031859/http://krechi-sila.narod.ru/)
 
 ## Технические подробности
-Построено на основе [nextjs](https://nextjs.org/).
-Хостинг: https://pages.github.com/
-CI/CD: https://github.com/features/actions
+- Построено на основе фреймворка [nextjs](https://nextjs.org/).
+- Хостинг: https://pages.github.com/
+- CI/CD: https://github.com/features/actions
 
 
 ## Копирайт
