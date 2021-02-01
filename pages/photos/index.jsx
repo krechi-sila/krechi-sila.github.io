@@ -11,7 +11,7 @@ import 'react-image-gallery/styles/css/image-gallery.css'
 import { PostLayout } from '../../layouts'
 
 export async function getStaticProps () {
-  const dataDirPath = path.join(process.cwd(), 'posts')
+  const dataDirPath = path.join(process.cwd(), 'data', 'posts')
   const fileFullPath = path.join(dataDirPath, `photos.md`)
   const fileContents = fs.readFileSync(fileFullPath, 'utf8')
   const matterResult = matter(fileContents)

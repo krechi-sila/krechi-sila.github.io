@@ -8,7 +8,7 @@ import unwrapImages from 'remark-unwrap-images'
 import { PostLayout } from '../../layouts'
 
 export async function getStaticProps () {
-  const dataDirPath = path.join(process.cwd(), 'posts')
+  const dataDirPath = path.join(process.cwd(), 'data', 'posts')
   const fileFullPath = path.join(dataDirPath, `geo.md`)
   const fileContents = fs.readFileSync(fileFullPath, 'utf8')
   const matterResult = matter(fileContents)
