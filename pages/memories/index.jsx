@@ -39,8 +39,6 @@ export async function getStaticProps () {
 }
 
 export default function MemoriesPage ({ allMemoriesData }) {
-  console.log('allMemoriesData: ', allMemoriesData) // eslint-disable-line
-
   return (
     <PostLayout>
       <Head>
@@ -51,7 +49,7 @@ export default function MemoriesPage ({ allMemoriesData }) {
 
         <nav>
           <ul>
-            {allMemoriesData.map(({ metaData }) => <Memory data={metaData} />)}
+            {allMemoriesData.map(({ metaData }) => <Memory key={metaData.title} data={metaData} />)}
           </ul>
         </nav>
       </article>
