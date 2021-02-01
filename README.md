@@ -1,6 +1,7 @@
 # Сайт Кречевиц
 
 ## История версий
+- [9 сентября 2020](https://web.archive.org/web/20200909013213/https://krechi-sila.github.io/)
 - [9 ноября 2017](https://web.archive.org/web/20171109080811/https://krechi-sila.github.io/)
 - [11 февраля 2017](https://web.archive.org/web/20170211025138/http://krechi-sila.narod.ru:80/)
 - [30 июля 2014](https://web.archive.org/web/20140730172433/http://krechi-sila.narod.ru:80/)
