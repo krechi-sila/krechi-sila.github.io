@@ -32,7 +32,7 @@ export async function getStaticProps () {
     getAllFilesIds(memoryDirectory)
       .map(async (fileId) => {
         const fileData = await getFileData(path.join(memoryDirectory, `${fileId}.md`))
-        fileData.metaData.slug = `${fileId}.md`
+        fileData.metaData.slug = `${fileId}`
         return {
           ...fileData,
         }
