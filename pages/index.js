@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { Header } from 'semantic-ui-react'
 import { getSortedPostsData } from '../lib/posts'
 import { PostLayout } from '../layouts'
 
@@ -6,16 +7,16 @@ export default function Home () {
   
   useEffect(() => {
     const script = document.createElement('script')
-    script.src = '//vk.com/js/api/openapi.js?72'
+    script.src = '//vk.com/js/api/openapi.js?168'
     script.onload = function () {
       if (window.VK) {
         VK.Widgets.Group(
           'vk_groups',
           {
             mode: 2,
-            wide: 1,
-            width: '550',
-            height: '400'
+            wide: 0,
+            width: '700',
+            height: '800'
           },
           239849
         )
@@ -28,9 +29,9 @@ export default function Home () {
   
   return (
     <PostLayout home>
-      <section>
-        <h2 className={'page__header'}>О проекте</h2>
-        <article>
+      <section className="ui text container">
+        <Header as="h1">О проекте</Header>
+        <article className="ui container">
           <p>Всем привет!</p>
           <p>
             Это — некоммерческий проект в поддержку нашего любимого авиагородока Кречевицы
@@ -47,8 +48,8 @@ export default function Home () {
         </article>
       </section>
 
-      <div className="vkVidget" style={{ width: '100%' }}>
-        <div id="vk_groups" style={{ width: '100%' }} />
+      <div className="vkVidget">
+        <div id="vk_groups" />
       </div>
     </PostLayout>
   )

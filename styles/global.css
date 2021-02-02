@@ -8,7 +8,7 @@ body {
 }
 
 body {
-  background-color: hsla(57, 59%, 82%, .45);
+  background-color: #fcfcf8;
 }
 
 * {
@@ -29,10 +29,14 @@ img {
   display: block;
 }
 
+main {
+  margin: 30px 0;
+}
+
 .page__header {
   font-family: sans-serif;
-  font-size: 3em;
-  margin-bottom: 3em;
+  font-size: 2em;
+  margin: 2em 0;
 }
 
 .footer {
@@ -53,4 +57,9 @@ img {
 
 .footer__item:last-child {
   margin-right: 0;
+}
+
+.vkVidget {
+  margin: 50px 0 0 0;
+  min-width: 800px;
 }
