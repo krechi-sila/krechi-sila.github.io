@@ -19,7 +19,9 @@ const Memory = function ({ data }) {
         {data.memory_date}
       </div>
       <div>
-        {data.title}
+        <Link href={`/memories/${data.slug}`}>
+          <a>{data.title}</a>
+        </Link>
       </div>
     </li>
   )
@@ -28,7 +30,13 @@ const Memory = function ({ data }) {
 export async function getStaticProps () {
   const allMemoriesData = await Promise.all(
     getAllFilesIds(memoryDirectory)
-      .map(fileId => getFileData(path.join(memoryDirectory, `${fileId}.md`))),
+      .map(async (fileId) => {
+        const fileData = await getFileData(path.join(memoryDirectory, `${fileId}.md`))
+        fileData.metaData.slug = `${fileId}.md`
+        return {
+          ...fileData,
+        }
+      }),
   )
 
   return {
@@ -49,7 +57,7 @@ export default function MemoriesPage ({ allMemoriesData }) {
 
         <nav>
           <ul>
-            {allMemoriesData.map(({ metaData }) => <Memory key={metaData.title} data={metaData} />)}
+            {allMemoriesData.map(({ metaData }) => <Memory key={metaData.slug} data={metaData} />)}
           </ul>
         </nav>
       </article>
