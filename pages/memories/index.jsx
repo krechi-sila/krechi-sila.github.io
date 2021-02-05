@@ -1,4 +1,5 @@
 import path from 'path'
+import { parseISO, getDate, getMonth, getYear } from 'date-fns'
 import Head from 'next/head'
 import Link from 'next/link'
 import 'react-image-gallery/styles/css/image-gallery.css'
@@ -15,9 +16,9 @@ const pageTitle = `Истории`
 const Memory = function ({ data }) {
   return (
     <li className="event-item">
-      <div>
-        {data.memory_date}
-      </div>
+      <time>
+        {data.memory_date_parsed.year}
+      </time>
       <div>
         <Link href={`/memories/${data.slug}`}>
           <a>{data.title}</a>
@@ -33,15 +34,24 @@ export async function getStaticProps () {
       .map(async (fileId) => {
         const fileData = await getFileData(path.join(memoryDirectory, `${fileId}.md`))
         fileData.metaData.slug = `${fileId}`
+        const memory_date = parseISO(fileData.metaData.memory_date)
+        
+        fileData.metaData.memory_date_parsed = {
+          year: getYear(memory_date),
+          month: getMonth(memory_date),
+          day: getDate(memory_date)
+        }
         return {
           ...fileData,
         }
       }),
   )
+  
+  
 
   return {
     props: {
-      allMemoriesData,
+      allMemoriesData: allMemoriesData.sort((prev, next) => next.metaData.memory_date_parsed.year - prev.metaData.memory_date_parsed.year),
     },
   }
 }
