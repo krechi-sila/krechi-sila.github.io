@@ -9,7 +9,7 @@ import getAllFilesIds from '../../lib/getAllFilesIds'
 import getFileData from '../../lib/getFileData'
 
 import { PostLayout } from '../../layouts'
-import { Memory } from '../../components'
+import { Memories } from '../../components'
 
 const memoryDirectory = path.join(process.cwd(), 'data', 'memories')
 const pageTitle = `Истории`
@@ -35,22 +35,12 @@ export async function getStaticProps () {
 
   return {
     props: {
-      allMemoriesData: allMemoriesData.sort((prev, next) => next.metaData.memory_date_parsed.year - prev.metaData.memory_date_parsed.year),
+      allMemoriesData,
     },
   }
 }
 
 export default function MemoriesPage ({ allMemoriesData }) {
-  const groupedMemories = allMemoriesData.reduce((accumulator, currentValue) => {
-    if (accumulator[currentValue.metaData.memory_date_parsed.year]) {
-      accumulator[currentValue.metaData.memory_date_parsed.year].push(currentValue)
-    } else {
-      accumulator[currentValue.metaData.memory_date_parsed.year] = [currentValue]
-    }
-
-    return accumulator
-  }, {})
-  
   return (
     <PostLayout>
       <Head>
@@ -60,18 +50,7 @@ export default function MemoriesPage ({ allMemoriesData }) {
       <article>
         <h1 className="page__header">{pageTitle}</h1>
 
-        <nav>
-          <ul>
-            {
-              Object.keys(groupedMemories).map(year => (
-                <li key={year}>
-                  <time>{year}</time>
-                  {groupedMemories[year].map(memory => <Memory data={memory.metaData} />)}
-                </li>
-              ))
-            }
-          </ul>
-        </nav>
+        <Memories allMemoriesData={allMemoriesData} />
       </article>
       
     </PostLayout>

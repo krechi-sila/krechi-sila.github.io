@@ -3,6 +3,7 @@ import { Header } from './Header'
 import { Menu } from './Menu'
 import { CounterYandex } from './CounterYandex'
 import { Memory } from './Memory'
+import { Memories } from './Memories'
 
 
 export {
@@ -11,4 +12,5 @@ export {
   Menu,
   CounterYandex,
   Memory,
+  Memories,
 }

@@ -1,0 +1,23 @@
+.root {
+  margin: 0;
+  padding: 0;
+}
+
+.memoriesItem {
+  margin: 3em 0 0 0;
+  list-style-type: none;
+  display: flex;
+}
+
+.memoriesItem__year {
+  font-size: 2.6em;
+  font-weight: bold;
+}
+
+.memoriesItem__records {
+  margin: 3.2em 0 0 1em;
+}
+
+.memoriesItem__record {
+  
+}
