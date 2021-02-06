@@ -1,11 +1,9 @@
-import { Menu } from '../Menu'
+import { Menu } from '../../components'
 
 export default function Header () {
   return (
     <header>
-      <nav>
-        <Menu />
-      </nav>
+      <Menu />
     </header>
   )
 }

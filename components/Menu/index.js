@@ -1,1 +1,3 @@
-export { Menu } from './Menu'
+import Menu from './Menu'
+
+export { Menu }

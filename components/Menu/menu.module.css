@@ -1,9 +1,9 @@
-.menu {
+.root {
   display: flex;
 }
 
 @media (max-width: 500px) {
-  .menu {
+  .root {
     flex-direction: column;
     margin: 0 auto;
     max-width: 50vw;
@@ -13,19 +13,16 @@
 .item {
   flex-grow: 1;
   text-align: center;
+  text-decoration: underline 3px #4183c4;
+}
+
+.item_active {
+  color: #999999;
+  text-decoration: none;
 }
 
 .item:last-child {
   margin-right: 0;
-}
-
-.itemLink {
-  color: navy
-}
-
-
-.itemLink:visited {
-  color: #3e3e3e
 }
 
 @media (max-width: 500px) {
