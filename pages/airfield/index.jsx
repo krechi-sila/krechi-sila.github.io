@@ -115,13 +115,13 @@ export default function AirfieldPage ({ allArticles }) {
         <div style={{ position: 'relative', overflow: 'hidden' }}>
           <a
             href="https://yandex.ru/maps/org/aerodrom_krechevitsy/85020009820/"
-            style={{ color: '#eeeeee', 'font-size': '12px', position: 'absolute', top: '0px' }}
+            style={{ color: '#eeeeee', 'fontSize': '12px', position: 'absolute', top: '0px' }}
           >
             аэродром Кречевицы
           </a>
           <a
             href="https://yandex.ru/maps/24/veliky-novgorod/category/airfield/200992989394/?utm_medium=mapframe&utm_source=maps"
-            style={{ color: '#eeeeee', 'font-size': '12px', position: 'absolute', top: '14px' }}
+            style={{ color: '#eeeeee', 'fontSize': '12px', position: 'absolute', top: '14px' }}
           >Аэродром в Великом Новгороде</a>
           <iframe src="https://yandex.ru/map-widget/v1/-/CCUMZUg38C" width="560" height="400" frameBorder="1"
             allowFullScreen style={{ position: 'relative' }} />
