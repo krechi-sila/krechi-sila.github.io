@@ -1,3 +1,4 @@
+import fs from 'fs'
 import path from 'path'
 import {
   parseISO,
@@ -6,6 +7,8 @@ import {
   getYear,
 } from 'date-fns'
 import Head from 'next/head'
+import 'react-image-gallery/styles/css/image-gallery.css'
+import ImageGallery from 'react-image-gallery'
 import 'react-image-gallery/styles/css/image-gallery.css'
 
 import mainData from '../../data/main'
@@ -37,14 +40,24 @@ export async function getStaticProps () {
       }),
   )
 
+  const imagesDirPath = path.join(process.cwd(), 'public', 'images', 'airfield', 'scheme')
+  const schemesImages = fs.readdirSync(imagesDirPath)
+    .map((fileName => {
+      return {
+        original: `../images/airfield/scheme/${fileName}`,
+        thumbnail: `../images/airfield/scheme/${fileName}`,
+      }
+    }))
+
   return {
     props: {
       allArticles,
+      schemesImages,
     },
   }
 }
 
-export default function AirfieldPage ({ allArticles }) {
+export default function AirfieldPage ({ allArticles, schemesImages }) {
   return (
     <PostLayout>
       <Head>
@@ -53,7 +66,6 @@ export default function AirfieldPage ({ allArticles }) {
 
       <div className="airfieldPage">
         <h3>Информация об Аэродроме</h3>
-
         <figure>
           <blockquote
             cite="https://news.novgorod.ru/theme/%D0%90%D1%8D%D1%80%D0%BE%D0%BF%D0%BE%D1%80%D1%82+%D0%9A%D1%80%D0%B5%D1%87%D0%B5%D0%B2%D0%B8%D1%86%D1%8B/">
@@ -66,7 +78,6 @@ export default function AirfieldPage ({ allArticles }) {
           <figcaption>— «Новгород.ру», <cite>Тема: Аэропорт Кречевицы аэродром, Кречевицы</cite></figcaption>
           <a href="https://news.novgorod.ru/theme/Аэропорт+Кречевицы/">news.novgorod.ru/theme/Аэропорт+Кречевицы</a>
         </figure>
-
         <p>
           <a href="http://portal.nov.ru/portal/item/6792-aeroport-v-krechevitsah-prozhekty-i-realii.html">
             <img src="./images/airfield/Aerodrom_Krechevitsy_5.jpg"
@@ -74,7 +85,6 @@ export default function AirfieldPage ({ allArticles }) {
           </a>
           Клуб «Пегас» на территории аэродрома Кречевицы
         </p>
-
         <figure>
           <blockquote cite="http://www.novgorodtransavia.ru/istoricheskaya-spravka.html">
             <p>
@@ -100,7 +110,6 @@ export default function AirfieldPage ({ allArticles }) {
             href="http://www.novgorodtransavia.ru/istoricheskaya-spravka.html">novgorodtransavia.ru/istoricheskaya-spravka.html</a>
         </figure>
 
-
         <h3>Видео</h3>
         <iframe
           width="560"
@@ -109,7 +118,6 @@ export default function AirfieldPage ({ allArticles }) {
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen />
-
 
         <h3>Карта</h3>
         <div style={{ position: 'relative', overflow: 'hidden' }}>
@@ -127,15 +135,14 @@ export default function AirfieldPage ({ allArticles }) {
             allowFullScreen style={{ position: 'relative' }} />
         </div>
 
+        <h3>Схемы</h3>
+        <ImageGallery items={schemesImages} />
+
         <h3>Контакты</h3>
-
         <p>Администрация: <a href="mailto:738566@mail.ru">738566@mail.ru</a></p>
-
         <p>начальник ГОКУ <a href="http://www.novgorodtransavia.ru">«НовгородТрансАвиа»</a>: Трембицкий Сергей Сергеевич
         </p>
-
         <p>Старший авиационный начальник: <br /> Вячеслав Васильевич Гладышев <span>+79062015526</span></p>
-
 
         <h3>Инфраструктура, гостиница, такси</h3>
         <p>
