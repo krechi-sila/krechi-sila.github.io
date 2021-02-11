@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import path from 'path'
 import { PostLayout } from '../../layouts'
 import getAllFilesIds from '../../lib/getAllFilesIds'
@@ -30,8 +31,12 @@ export default function GovernmentPromises ({ allMemoriesData }) {
       <Head>
         <title>{allMemoriesData.metaData.date}: {allMemoriesData.metaData.title}</title>
       </Head>
+
+      <div><Link href="/airfield"><a style={{ position: 'fixed', fontSize: '3em', margin: '-0.1em 0 0 -1em' }}>↑</a></Link></div>
+      <time style={{ display: 'block', margin: '0 0 1em 0', fontSize: '3em' }}>{allMemoriesData.metaData.date}</time>
+      
+      
       <article>
-        <h1>{allMemoriesData.metaData.date}: {allMemoriesData.metaData.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: allMemoriesData.html }} />
       </article>
     </PostLayout>

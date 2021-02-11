@@ -51,7 +51,8 @@ export async function getStaticProps () {
 
   return {
     props: {
-      allArticles,
+      allArticles: allArticles.sort(
+        (articlePrev, articleNext) => articleNext.metaData.date_parsed.year - articlePrev.metaData.date_parsed.year),
       schemesImages,
     },
   }
@@ -65,6 +66,27 @@ export default function AirfieldPage ({ allArticles, schemesImages }) {
       </Head>
 
       <div className="airfieldPage">
+
+        <h3>Хроника реконструкции</h3>
+        <ul style={{
+          width: '150%',
+          margin:' 0px 0 0 -16.1%',
+          fontSize: '0.8em',
+          listStyle: 'none'
+        }}>
+          {allArticles.map(article => {
+            return (
+              <li key={article.metaData.slug}>
+                <time style={{ fontSize: '1.1em'}} dateTime={article.metaData.date}>{article.metaData.date_parsed.year}</time>
+                {' — '} 
+                <a href={`/airfield/${article.metaData.slug}`}>
+                  {article.metaData.title}
+                </a>
+              </li>
+            )
+          })}
+        </ul>
+
         <h3>Информация об Аэродроме</h3>
         <figure>
           <blockquote
@@ -75,8 +97,8 @@ export default function AirfieldPage ({ allArticles, schemesImages }) {
               Но пока аэропорт нерегулярно используется лишь малой авиацией.
             </p>
           </blockquote>
-          <figcaption>— «Новгород.ру», <cite>Тема: Аэропорт Кречевицы аэродром, Кречевицы</cite></figcaption>
-          <a href="https://news.novgorod.ru/theme/Аэропорт+Кречевицы/">news.novgorod.ru/theme/Аэропорт+Кречевицы</a>
+          <figcaption>— «Новгород.ру», <cite><a href="https://news.novgorod.ru/theme/Аэропорт+Кречевицы/">news.novgorod.ru/theme/Аэропорт+Кречевицы</a></cite></figcaption>
+          
         </figure>
         <p>
           <a href="http://portal.nov.ru/portal/item/6792-aeroport-v-krechevitsah-prozhekty-i-realii.html">
@@ -163,19 +185,6 @@ export default function AirfieldPage ({ allArticles, schemesImages }) {
           <li>flightradar24: <a href="https://www.flightradar24.com/58.65,31.23/10">карта</a></li>
           <li>urban3p: <a href="https://urban3p.com/vivarium/8661">В\Ч 21350-15, аэродром Кречевицы, 04.2019</a></li>
           <li>foursquare: <a href="http://4sq.com/QtSKpv">Аэропорт Кречевицы</a></li>
-        </ul>
-
-        <h3>Хроника реконструкции</h3>
-        <ul>
-          {allArticles.map(article => {
-            return (
-              <li key={article.metaData.slug}>
-                <a href={`/airfield/${article.metaData.slug}`}>
-                  {article.metaData.title}
-                </a>
-              </li>
-            )
-          })}
         </ul>
       </div>
     </PostLayout>
