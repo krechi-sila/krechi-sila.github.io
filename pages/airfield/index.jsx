@@ -45,8 +45,6 @@ export async function getStaticProps () {
 }
 
 export default function AirfieldPage ({ allArticles }) {
-  console.log('allArticles: ', allArticles) // eslint-disable-line
-
   return (
     <PostLayout>
       <Head>
@@ -71,7 +69,7 @@ export default function AirfieldPage ({ allArticles }) {
 
         <p>
           <a href="http://portal.nov.ru/portal/item/6792-aeroport-v-krechevitsah-prozhekty-i-realii.html">
-            <img src="http://portal.nov.ru/portal/images/Aerodrom_Krechevitsy/Aerodrom_Krechevitsy_5.jpg"
+            <img src="./images/airfield/Aerodrom_Krechevitsy_5.jpg"
               alt="Клуб «Пегас» на территории аэродрома Кречевицы" />
           </a>
           Клуб «Пегас» на территории аэродрома Кречевицы
