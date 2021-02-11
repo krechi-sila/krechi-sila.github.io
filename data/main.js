@@ -1,26 +1,11 @@
 export default {
   description: 'Кречевицы, Кречи, Кречи-сила, Krechi, Krechi-sila, Школа номер 15, школа № 15 имени Шпунякова, Кречевицы (аэропорт), 110 ВТАП',
   title: 'Кречевицы — микрорайон Великого Новгорода',
-  menu: [
-    {
-      to: '/',
-      title: 'Главная',
-    },
-    {
-      to: '/geo',
-      title: 'География',
-    },
-    {
-      to: '/photos',
-      title: 'Фото',
-    },
-    {
-      to: '/memories',
-      title: 'Истории',
-    },
-    {
-      to: 'https://yandex.ru/maps/24/veliky-novgorod/routes/bus_101/796d617073626d313a2f2f7472616e7369742f6c696e653f69643d32353330343539393237266c6c3d33312e33323331393225324335382e353639323132266e616d653d31303126723d3632393726747970653d627573/?ll=31.343047%2C58.579901&z=13',
-      title: '101 автобус',
-    },
+  videos: [
+    'https://www.youtube.com/watch?v=eA7BNpoW9hE',
+    'https://www.youtube.com/watch?v=vDKhStzvyQE',
+    'https://www.youtube.com/watch?v=87HshcMLM18',
+    'https://www.youtube.com/watch?v=TT7mDODyf1w',
+    'https://www.youtube.com/watch?v=Lst4A4bKNAE',
   ],
 }
