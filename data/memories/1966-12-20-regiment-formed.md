@@ -14,7 +14,7 @@ memory_date: '1966-12-20'
 
 <a href="https://110vtap.ucoz.ru/load/pervyj_starshij_shturman_belikov_mark_grigorevich/1-1-0-79">
  <img
-      src="../images/commanders/1.jpg"
+      src="../images/commanders/ivanov_vladimir_tihonovich.jpg"
       alt="Иванов Владимир Тихонович" 
       loading="lazy" />
 </a>
