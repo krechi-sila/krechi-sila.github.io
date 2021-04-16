@@ -28,7 +28,7 @@ export default function Memories ({ allMemoriesData }) {
               {
                 groupedMemories[year].map(
                   memory => (
-                    <div className={styles.memoriesItem__record}>
+                    <div className={styles.memoriesItem__record} key={memory.metaData.slug}>
                       <Memory data={memory.metaData} key={memory.metaData.slug} />
                     </div>
                   ),
