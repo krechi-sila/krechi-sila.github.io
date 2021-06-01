@@ -41,6 +41,10 @@ export default function PostLayout ({ children, home }) {
             krechi-sila@yandex.ru
           </a>
         </span>
+        <span className="footer__item">Открытые исходники: <a
+          href="https://github.com/krechi-sila/krechi-sila.github.io" target="_blank">
+          github.com/krechi-sila/krechi-sila.github.io</a>
+        </span>
       </footer>
 
       <CounterYandex />
