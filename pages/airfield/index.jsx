@@ -5,6 +5,7 @@ import {
   getDate,
   getMonth,
   getYear,
+  getTime,
 } from 'date-fns'
 import Head from 'next/head'
 import 'react-image-gallery/styles/css/image-gallery.css'
@@ -33,6 +34,7 @@ export async function getStaticProps () {
           year: getYear(date),
           month: getMonth(date),
           day: getDate(date),
+          milliseconds: getTime(date),
         }
         return {
           ...fileData,
@@ -52,7 +54,7 @@ export async function getStaticProps () {
   return {
     props: {
       allArticles: allArticles.sort(
-        (articlePrev, articleNext) => articleNext.metaData.date_parsed.year - articlePrev.metaData.date_parsed.year),
+        (articlePrev, articleNext) => articleNext.metaData.date_parsed.milliseconds - articlePrev.metaData.date_parsed.milliseconds),
       schemesImages,
     },
   }
