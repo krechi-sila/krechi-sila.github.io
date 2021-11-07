@@ -30,10 +30,20 @@ export async function getStaticProps () {
       }
     }))
 
+  const personalArchiveImagesDirPath = path.join(process.cwd(), 'public', 'images', 'album-personal-archive')
+  const personalArchiveImages = fs.readdirSync(personalArchiveImagesDirPath)
+  .map((fileName => {
+    return {
+      original: `../images/album-personal-archive/${fileName}`,
+      thumbnail: `../images/album-personal-archive/${fileName}`,
+    }
+  }))
+
   return {
     props: {
       pageData: {
         images,
+        personalArchiveImages,
         contentHtml,
         ...matterResult.data,
       },
@@ -51,7 +61,12 @@ export default function PhotosPage ({ pageData }) {
         <h1 className="page__header">{pageData.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: pageData.contentHtml }} />
       </article>
+
+      <h2 className="ui header">Фото из архива выставки</h2>
       <ImageGallery items={pageData.images} />
+
+      <h2 className="ui header">Фото из архива автора сайта</h2>
+      <ImageGallery items={pageData.personalArchiveImages} />
     </PostLayout>
   )
 }
