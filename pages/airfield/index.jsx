@@ -8,6 +8,7 @@ import {
   getTime,
 } from 'date-fns'
 import Head from 'next/head'
+import Image from 'next/image'
 import 'react-image-gallery/styles/css/image-gallery.css'
 import ImageGallery from 'react-image-gallery'
 import 'react-image-gallery/styles/css/image-gallery.css'
@@ -104,7 +105,7 @@ export default function AirfieldPage ({ allArticles, schemesImages }) {
         </figure>
         <p>
           <a href="http://portal.nov.ru/portal/item/6792-aeroport-v-krechevitsah-prozhekty-i-realii.html">
-            <img src="./images/airfield/Aerodrom_Krechevitsy_5.jpg"
+            <Image src="./images/airfield/Aerodrom_Krechevitsy_5.jpg"
               alt="Клуб «Пегас» на территории аэродрома Кречевицы" />
           </a>
           Клуб «Пегас» на территории аэродрома Кречевицы
