@@ -10,7 +10,8 @@
     "dev-debug": "NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "export": "next export",
-    "start": "next start"
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
     "date-fns": "^2.25.0",

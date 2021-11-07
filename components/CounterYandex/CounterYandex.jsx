@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Image from 'next/image'
 class CounterYandex extends Component {
   componentDidMount () {
     const script = document.createElement('script')
@@ -18,7 +17,10 @@ class CounterYandex extends Component {
   render () {
     return (
       <noscript>
-        <div style={{position: 'absolute'}}><Image src="//mc.yandex.ru/watch/414633" alt="" /></div>
+        <div style={{position: 'absolute'}}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="//mc.yandex.ru/watch/414633" alt="" />
+        </div>
       </noscript>
     )
   }
