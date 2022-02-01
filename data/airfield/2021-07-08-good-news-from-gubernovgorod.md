@@ -2,7 +2,6 @@
 title: 'Ремонт посадочной площадки и инфраструктуры будет произведен'
 date: '2021-07-08'
 ---
-
 <figure>
   <blockquote
     cite="https://news.novgorod.ru/news/posadochnuyu-ploshchadku-aerodroma-v-krechevicakh-otremontiruyut-za-schet-federalnoy-subsidii--179501.html">

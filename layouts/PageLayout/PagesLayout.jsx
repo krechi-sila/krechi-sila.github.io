@@ -1,15 +1,16 @@
 import Head from 'next/head'
-import postLayoutStyles from './postLayout.module.css'
-import mainData from '../../data/main'
 import {
-  Header,
   CounterYandex,
+  Header,
 } from '../../components'
+import mainData from '../../data/main'
 
-export default function PostLayout ({ children, home }) {
+import pageLayoutStyles from './pageLayout.module.css'
+
+export default function PagesLayout ({ children }) {
   return (
     <>
-      <div className={postLayoutStyles.container}>
+      <div className={pageLayoutStyles.container}>
         <Head>
           <link rel="icon" href="/favicon.ico" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -41,9 +42,12 @@ export default function PostLayout ({ children, home }) {
             krechi-sila@yandex.ru
           </a>
         </span>
-        <span className="footer__item">Открытые исходники: <a
-          href="https://github.com/krechi-sila/krechi-sila.github.io" target="_blank">
-          github.com/krechi-sila/krechi-sila.github.io</a>
+        <span className="footer__item">Открытые исходники:
+          <a
+            href="https://github.com/krechi-sila/krechi-sila.github.io"
+            target="_blank"
+            rel="noreferrer"
+          >github.com/krechi-sila/krechi-sila.github.io</a>
         </span>
       </footer>
 

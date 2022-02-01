@@ -1,1 +1,1 @@
-export { PostLayout } from './PostLayout'
+export { PagesLayout } from './PageLayout'
