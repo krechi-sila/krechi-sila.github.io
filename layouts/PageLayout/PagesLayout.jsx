@@ -30,19 +30,19 @@ export default function PagesLayout ({ children }) {
 
       <footer className="footer">
         <span className="copyright footer__item">
-          2003 — {(new Date()).getFullYear()},{' '}
+          <a href="https://web.archive.org/web/20040528031859/http://krechi-sila.narod.ru/">2004</a> — {(new Date()).getFullYear()},{' '}
           <a href="//metrika.yandex.ru/stat/?id=414633">
             Кречевицы в сети
           </a>
         </span>
         <span
           className="feedback footer__item">
-          Пишите: {' '}
+          Пишите:{' '}
           <a href="mailto:krechi-sila@yandex.ru">
             krechi-sila@yandex.ru
           </a>
         </span>
-        <span className="footer__item">Открытые исходники:
+        <span className="footer__item">Открытые исходники:{' '}
           <a
             href="https://github.com/krechi-sila/krechi-sila.github.io"
             target="_blank"
