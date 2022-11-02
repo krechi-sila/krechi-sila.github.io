@@ -9,9 +9,9 @@ export default function Memory ({ data }) {
       </time>
       <div className={style.slug}>
         <Link href={`/memories/${data.slug}`}>
-          <a>{data.title}</a>
+          {data.title}
         </Link>
       </div>
     </div>
-  )
+  );
 }

@@ -4,7 +4,7 @@ import { withRouter } from 'next/router'
 import style from './menu.module.css'
 
 const ActiveLink = withRouter(({ router, children, ...props }) => (
-  <Link {...props}>
+  <Link {...props} legacyBehavior>
     {React.cloneElement(children, {
       className: router.pathname === props.href ? `${style.item} ${style.item_active}` : style.item,
     })}

@@ -44,16 +44,16 @@ export default function GovernmentPromises({ allMemoriesData }) {
       </Head>
 
       <div>
-        <Link href="/airfield">
-          <a
-            style={{
-              position: "fixed",
-              fontSize: "3em",
-              margin: "-0.1em 0 0 -1em",
-            }}
-          >
+        <Link
+          href="/airfield"
+          style={{
+            position: "fixed",
+            fontSize: "3em",
+            margin: "-0.1em 0 0 -1em",
+          }}>
+          
             ↑
-          </a>
+          
         </Link>
       </div>
       <time style={{ display: "block", margin: "0 0 1em 0", fontSize: "3em" }}>
