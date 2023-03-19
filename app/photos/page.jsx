@@ -6,7 +6,7 @@ import 'react-image-gallery/styles/css/image-gallery.css'
 
 import parseMarkdownFile from '../../lib/parseMarkdownFile'
 
-export async function getStaticProps () {
+export async function getPhotos () {
   const dataDirPath = path.join(process.cwd(), 'data', 'pages')
   const fileFullPath = path.join(dataDirPath, `photos.md`)
   const pageData = await parseMarkdownFile(fileFullPath)
@@ -29,33 +29,31 @@ export async function getStaticProps () {
     }))
 
   return {
-    props: {
-      pageData: {
-        images,
-        personalArchiveImages,
-        title: pageData.meta.title,
-        html: pageData.html,
-      },
-    },
+    images,
+    personalArchiveImages,
+    title: pageData.meta.title,
+    html: pageData.html,
   }
 }
 
-export default function PhotosPage ({ pageData }) {
+export default async function PhotosPage () {
+  const photos = await getPhotos()
+
   return (
     <>
       <Head>
-        <title>{pageData.title}</title>
+        <title>{photos.title}</title>
       </Head>
       <article>
-        <h1 className="page__header">{pageData.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: pageData.html }} />
+        <h1 className="page__header">{photos.title}</h1>
+        <div dangerouslySetInnerHTML={{ __html: photos.html }} />
       </article>
 
       <h2 className="ui header">Фото из архива выставки</h2>
-      <ImageGallery items={pageData.images} />
+      <ImageGallery items={photos.images} />
 
       <h2 className="ui header">Фото из архива автора сайта</h2>
-      <ImageGallery items={pageData.personalArchiveImages} />
+      <ImageGallery items={photos.personalArchiveImages} />
     </>
   )
 }

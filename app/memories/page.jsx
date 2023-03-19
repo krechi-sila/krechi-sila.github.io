@@ -1,10 +1,5 @@
 import path from 'path'
-import {
-  parseISO,
-  getDate,
-  getMonth,
-  getYear,
-} from 'date-fns'
+import { getDate, getMonth, getYear, parseISO } from 'date-fns'
 import Head from 'next/head'
 import 'react-image-gallery/styles/css/image-gallery.css'
 
@@ -16,8 +11,8 @@ import parseMarkdownFile from '../../lib/parseMarkdownFile'
 const memoryDirectory = path.join(process.cwd(), 'data', 'memories')
 const pageTitle = `Истории`
 
-export async function getStaticProps () {
-  const allMemoriesData = await Promise.all(
+export async function getAllMemoriesData () {
+  return await Promise.all(
     getAllFilesIds(memoryDirectory).map(async (fileId) => {
       const fileData = await parseMarkdownFile(path.join(memoryDirectory, `${fileId}.md`))
       const memory_date = parseISO(fileData.meta.memory_date)
@@ -34,15 +29,11 @@ export async function getStaticProps () {
       }
     }),
   )
-
-  return {
-    props: {
-      allMemoriesData,
-    },
-  }
 }
 
-export default function MemoriesPage ({ allMemoriesData }) {
+export default async function MemoriesPage () {
+  const allMemoriesData = await getAllMemoriesData()
+
   return (
     <>
       <Head>

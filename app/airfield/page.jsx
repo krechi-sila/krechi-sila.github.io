@@ -20,7 +20,7 @@ import parseMarkdownFile from '../../lib/parseMarkdownFile'
 const memoryDirectory = path.join(process.cwd(), 'data', 'airfield')
 const pageTitle = `Аэродром: хроника`
 
-export async function getStaticProps () {
+export async function getAllArticles () {
   const allArticles = await Promise.all(
     getAllFilesIds(memoryDirectory)
       .map(async (fileId) => {
@@ -53,15 +53,16 @@ export async function getStaticProps () {
     }))
 
   return {
-    props: {
-      allArticles: allArticles.sort(
-        (articlePrev, articleNext) => articleNext.metaData.date_parsed.milliseconds - articlePrev.metaData.date_parsed.milliseconds),
-      schemesImages,
-    },
+    allArticles: allArticles.sort(
+      (articlePrev, articleNext) => articleNext.metaData.date_parsed.milliseconds - articlePrev.metaData.date_parsed.milliseconds
+    ),
+    schemesImages,
   }
 }
 
-export default function AirfieldPage ({ allArticles, schemesImages }) {
+export default function AirfieldPage () {
+  const { allArticles, schemesImages } = getAllArticles()
+
   return (
     <>
       <Head>

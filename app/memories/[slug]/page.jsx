@@ -5,7 +5,7 @@ import parseMarkdownFile from '../../../lib/parseMarkdownFile'
 
 const memoryDirectory = path.join(process.cwd(), 'data', 'memories')
 
-export function getStaticPaths () {
+export function generateStaticParams () {
   const paths = getAllFilesIds(memoryDirectory).map(path => ({ params: { slug: path } }))
 
   return {
@@ -14,28 +14,17 @@ export function getStaticPaths () {
   }
 }
 
-export async function getStaticProps ({ params }) {
-  const fileData = await parseMarkdownFile(path.join(memoryDirectory, `${params.slug}.md`))
-  return {
-    props: {
-      allMemoriesData: {
-        title: fileData.meta.title,
-        date: fileData.meta.date,
-        html: fileData.html,
-      },
-    },
-  }
-}
+export default async function MemoryPage ({ params: { slug } })   {
+  const fileData = await parseMarkdownFile(path.join(memoryDirectory, `${slug}.md`))
 
-export default function MemoryPage ({ allMemoriesData }) {
   return (
     <>
       <Head>
-        <title>{allMemoriesData.date}: {allMemoriesData.title}</title>
+        <title>{fileData.meta.date}: {fileData.meta.title}</title>
       </Head>
       <article>
-        <h1>{allMemoriesData.date}: {allMemoriesData.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: allMemoriesData.html }} />
+        <h1>{fileData.meta.date}: {fileData.meta.title}</h1>
+        <div dangerouslySetInnerHTML={{ __html: fileData.html }} />
       </article>
     </>
   )
