@@ -1,4 +1,4 @@
-import { Menu } from '../../components'
+import { Menu } from '../index'
 
 export default function Header () {
   return (

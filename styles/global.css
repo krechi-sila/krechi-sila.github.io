@@ -45,8 +45,3 @@ main {
 .footer__item:last-child {
   margin-right: 0;
 }
-
-.vkVidget {
-  margin: 50px 0 0 0;
-  min-width: 800px;
-}

@@ -4,7 +4,6 @@ import path from 'path'
 import ImageGallery from 'react-image-gallery'
 import 'react-image-gallery/styles/css/image-gallery.css'
 
-import { PagesLayout } from '../../layouts'
 import parseMarkdownFile from '../../lib/parseMarkdownFile'
 
 export async function getStaticProps () {
@@ -43,7 +42,7 @@ export async function getStaticProps () {
 
 export default function PhotosPage ({ pageData }) {
   return (
-    <PagesLayout>
+    <>
       <Head>
         <title>{pageData.title}</title>
       </Head>
@@ -57,6 +56,6 @@ export default function PhotosPage ({ pageData }) {
 
       <h2 className="ui header">Фото из архива автора сайта</h2>
       <ImageGallery items={pageData.personalArchiveImages} />
-    </PagesLayout>
+    </>
   )
 }

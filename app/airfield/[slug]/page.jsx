@@ -1,9 +1,8 @@
 import Head from "next/head";
 import Link from "next/link";
 import path from "path";
-import { PagesLayout } from "../../layouts";
-import getAllFilesIds from "../../lib/getAllFilesIds";
-import parseMarkdownFile from "../../lib/parseMarkdownFile";
+import getAllFilesIds from "../../../lib/getAllFilesIds";
+import parseMarkdownFile from "../../../lib/parseMarkdownFile";
 
 const memoryDirectory = path.join(process.cwd(), "data", "airfield");
 
@@ -36,7 +35,7 @@ export async function getStaticProps({ params }) {
 
 export default function GovernmentPromises({ allMemoriesData }) {
   return (
-    <PagesLayout>
+    <>
       <Head>
         <title>
           {allMemoriesData.date}: {allMemoriesData.title}
@@ -45,15 +44,15 @@ export default function GovernmentPromises({ allMemoriesData }) {
 
       <div>
         <Link
-          href="/airfield"
+          href="/app/airfield"
           style={{
             position: "fixed",
             fontSize: "3em",
             margin: "-0.1em 0 0 -1em",
           }}>
-          
+
             ↑
-          
+
         </Link>
       </div>
       <time style={{ display: "block", margin: "0 0 1em 0", fontSize: "3em" }}>
@@ -63,6 +62,6 @@ export default function GovernmentPromises({ allMemoriesData }) {
       <article>
         <div dangerouslySetInnerHTML={{ __html: allMemoriesData.html }} />
       </article>
-    </PagesLayout>
+    </>
   );
 }

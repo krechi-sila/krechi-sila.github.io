@@ -1,1 +1,0 @@
-export { PagesLayout } from './PageLayout'

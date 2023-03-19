@@ -1,5 +1,11 @@
-.day {}
+.day {
+    margin: 0;
+}
 
-.month {}
+.month {
+    margin: 0;
+}
 
-.year {}
+.year {
+    margin: 0;
+}

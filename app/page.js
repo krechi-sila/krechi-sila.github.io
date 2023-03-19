@@ -1,13 +1,9 @@
 import Link from 'next/link'
-import { Header } from 'semantic-ui-react'
-
-import { PagesLayout } from '../layouts'
 
 export default function Home () {
   return (
-    <PagesLayout home>
       <section className="ui text container">
-        <Header as="h1">О проекте</Header>
+        <h1>О проекте</h1>
         <article className="ui container">
           <p>Кречеви́цы — микрорайон Великого Новгорода, до 2004 года — посёлок городского типа.</p>
           <br/>
@@ -23,13 +19,12 @@ export default function Home () {
           </p>
           <br/>
           <p>
-            В <Link href="memories/2009-10-14-regiment-disbandment">2009 полк был расформирован</Link>,
-            много лет <Link href="/airfield">обсуждаются проекты переоборудования аэродрома</Link> под гражданские самолеты.
+            В <Link href="app/memories/2009-10-14-regiment-disbandment">2009 полк был расформирован</Link>,
+            много лет <Link href="/app/airfield">обсуждаются проекты переоборудования аэродрома</Link> под гражданские самолеты.
           </p>
           <br/>
           <p>Кречевицах существует филиал <a href="http://www.pegas-center.ru/">авиаклуба «Пегас»</a> для малой авиации.</p>
         </article>
       </section>
-    </PagesLayout>
   )
 }

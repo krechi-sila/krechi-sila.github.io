@@ -1,6 +1,5 @@
 import Head from 'next/head'
 
-import { PagesLayout } from '../../layouts'
 import parseMarkdownFile from '../../lib/parseMarkdownFile'
 
 export async function getStaticProps () {
@@ -18,7 +17,7 @@ export async function getStaticProps () {
 
 export default function GeoPage ({ pageData }) {
   return (
-    <PagesLayout>
+    <>
       <Head>
         <title>{pageData.title}</title>
       </Head>
@@ -26,6 +25,6 @@ export default function GeoPage ({ pageData }) {
         <h1 className="page__header">{pageData.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: pageData.contentHtml }} />
       </article>
-    </PagesLayout>
+    </>
   )
 }

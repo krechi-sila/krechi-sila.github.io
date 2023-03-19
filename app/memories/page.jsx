@@ -10,7 +10,6 @@ import 'react-image-gallery/styles/css/image-gallery.css'
 
 import mainData from '../../data/main'
 import getAllFilesIds from '../../lib/getAllFilesIds'
-import { PagesLayout } from '../../layouts'
 import { Memories } from '../../components'
 import parseMarkdownFile from '../../lib/parseMarkdownFile'
 
@@ -45,7 +44,7 @@ export async function getStaticProps () {
 
 export default function MemoriesPage ({ allMemoriesData }) {
   return (
-    <PagesLayout>
+    <>
       <Head>
         <title>{mainData.title}: ${pageTitle}</title>
       </Head>
@@ -56,6 +55,6 @@ export default function MemoriesPage ({ allMemoriesData }) {
         <Memories allMemoriesData={allMemoriesData} />
       </article>
 
-    </PagesLayout>
+    </>
   )
 }

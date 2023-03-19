@@ -1,8 +1,7 @@
 import Head from 'next/head'
 import path from 'path'
-import { PagesLayout } from '../../layouts'
-import getAllFilesIds from '../../lib/getAllFilesIds'
-import parseMarkdownFile from '../../lib/parseMarkdownFile'
+import getAllFilesIds from '../../../lib/getAllFilesIds'
+import parseMarkdownFile from '../../../lib/parseMarkdownFile'
 
 const memoryDirectory = path.join(process.cwd(), 'data', 'memories')
 
@@ -30,7 +29,7 @@ export async function getStaticProps ({ params }) {
 
 export default function MemoryPage ({ allMemoriesData }) {
   return (
-    <PagesLayout>
+    <>
       <Head>
         <title>{allMemoriesData.date}: {allMemoriesData.title}</title>
       </Head>
@@ -38,6 +37,6 @@ export default function MemoryPage ({ allMemoriesData }) {
         <h1>{allMemoriesData.date}: {allMemoriesData.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: allMemoriesData.html }} />
       </article>
-    </PagesLayout>
+    </>
   )
 }

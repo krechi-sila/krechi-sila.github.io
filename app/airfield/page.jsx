@@ -13,7 +13,6 @@ import 'react-image-gallery/styles/css/image-gallery.css'
 
 import mainData from '../../data/main'
 
-import { PagesLayout } from '../../layouts'
 import getAllFilesIds from '../../lib/getAllFilesIds'
 
 import parseMarkdownFile from '../../lib/parseMarkdownFile'
@@ -38,7 +37,7 @@ export async function getStaticProps () {
               month: getMonth(date),
               day: getDate(date),
               milliseconds: getTime(date),
-            }
+            },
           },
         }
       }),
@@ -64,7 +63,7 @@ export async function getStaticProps () {
 
 export default function AirfieldPage ({ allArticles, schemesImages }) {
   return (
-    <PagesLayout>
+    <>
       <Head>
         <title>
           {mainData.title}: ${pageTitle}
@@ -186,7 +185,7 @@ export default function AirfieldPage ({ allArticles, schemesImages }) {
             аэродром Кречевицы
           </a>
           <a
-            href="https://yandex.ru/maps/24/veliky-novgorod/category/airfield/200992989394/?utm_medium=mapframe&utm_source=maps"
+            href="?utm_medium=mapframe&utm_source=maps"
             style={{
               color: '#eeeeee',
               fontSize: '12px',
@@ -267,6 +266,6 @@ export default function AirfieldPage ({ allArticles, schemesImages }) {
           </li>
         </ul>
       </div>
-    </PagesLayout>
+    </>
   )
 }
