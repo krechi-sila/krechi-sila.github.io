@@ -17,7 +17,7 @@
 
 
 ## Копирайт
-2003 — 2021, <br /> Кречевицы в сети.
+2003 — 2023, <br /> Кречевицы в сети.
 <br />
 <br />
 Пишите: [krechi-sila@yandex.ru](mailto:krechi-sila@yandex.ru)
