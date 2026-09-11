@@ -16,7 +16,7 @@
   "dependencies": {
     "date-fns": "^2.29.3",
     "gray-matter": "^4.0.3",
-    "next": "^13.0.1",
+    "next": "^15.5.24",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-image-gallery": "^1.2.11",
