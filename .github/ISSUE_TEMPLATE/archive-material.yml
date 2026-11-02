@@ -1,0 +1,89 @@
+name: Материал архива
+description: Обработать архивный материал о Кречевицах и добавить его на сайт
+title: "[Архив] "
+labels: ["archive"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Один issue — один материал. Правила обработки описаны в `AGENTS.md`.
+        Когда задача описана полностью, поставьте метку `agent-ready`.
+
+  - type: input
+    id: drive-folder
+    attributes:
+      label: Папка на Диске
+      description: Ссылка на папку или файл в Google Диске.
+      placeholder: https://drive.google.com/drive/folders/…
+    validations:
+      required: true
+
+  - type: input
+    id: archive-path
+    attributes:
+      label: Путь в архивном репо
+      description: Путь к материалу в архивном репозитории, если он там уже есть.
+      placeholder: путь/к/материалу/
+    validations:
+      required: false
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: Тип материала
+      options:
+        - Документ
+        - Фото
+        - Газета
+        - Воспоминания
+    validations:
+      required: true
+
+  - type: dropdown
+    id: era
+    attributes:
+      label: Эпоха
+      description: Глава летописи. Если эпоха неизвестна, это нужно установить при обработке материала.
+      options:
+        - "0 · До 1500 · До первого имени (origins)"
+        - "I · 1500–1700 · Монастырская земля (manuscript)"
+        - "II · 1700–1818 · На пороге перемен (civil)"
+        - "III · 1818–1831 · Военные поселения (settlement)"
+        - "IV · 1831–1902 · Кречевицы гвардейские (imperial)"
+        - "V · 1902–1917 · Казармы и поэзия (silver)"
+        - "VI · 1917–1941 · От эскадронов к авиации (revolution)"
+        - "VII · 1941–1945 · Война и утраты (war)"
+        - "VIII · 1945–1991 · Послевоенные Кречевицы (soviet)"
+        - "IX · 1991–2026 · Кречевицы сегодня (modern)"
+        - "Аэродром · 1926–2026 (airfield)"
+        - Несколько эпох
+        - Не установлена
+    validations:
+      required: true
+
+  - type: textarea
+    id: task
+    attributes:
+      label: Что нужно сделать
+      description: Что сделать с материалом и куда его добавить на сайте.
+      placeholder: |
+        Расшифровать заметку о Кречевицах из номера газеты, добавить запись в ARCHIVE
+        и текст в TRANSCRIPTS, связать с главой «Послевоенные Кречевицы».
+    validations:
+      required: true
+
+  - type: textarea
+    id: done
+    attributes:
+      label: Критерии готовности
+      description: По каким признакам задача считается выполненной. Отредактируйте список под материал.
+      value: |
+        - [ ] Источник прочитан целиком, добавлен в `SOURCES` и указан у каждой записи
+        - [ ] Точная, приблизительная дата и дата публикации разведены; ничего не додатировано
+        - [ ] Сведения только из сборника помечены «по сборнику»
+        - [ ] Спорные места отмечены в тексте и перечислены в PR
+        - [ ] Сканы книг и газет целиком не опубликованы: только расшифровка фрагмента, описание и ссылка
+        - [ ] Для воспоминаний есть согласие автора на публикацию
+        - [ ] `node --check` и `git diff --check` проходят, к PR приложен скриншот
+    validations:
+      required: true
