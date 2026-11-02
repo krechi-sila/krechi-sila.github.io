@@ -15,6 +15,7 @@ export default function Menu () {
   return (
     <nav className={style.root}>
       <ActiveLink href="/"><a>Главная</a></ActiveLink>
+      <a href="/chronicle/index.html" className={style.item}>Сквозь века</a>
       <ActiveLink href="/geo"><a>География</a></ActiveLink>
       <ActiveLink href="/photos"><a>Фото</a></ActiveLink>
       <ActiveLink href="/memories"><a>Истории</a></ActiveLink>
